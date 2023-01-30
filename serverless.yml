@@ -1,0 +1,21 @@
+
+service: juanjolescano-getbyidclient
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  region: us-east-1
+  runtime: nodejs12.x
+
+
+
+functions:
+  getbyidclient:
+    handler: getbyidclient.handler
+    description: 'An API that create new clients'
+    events:
+        - http:
+            path: clients/{id}
+            method: GET
+            
